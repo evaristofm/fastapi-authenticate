@@ -2,7 +2,7 @@
 Implementando autenticação no FastAPI com banco de dados Tortoise-ORM 
 
 # Como rodar o código?
-<ul> <li> </li>
+<ul> 
 <li> git clone https://github.com/evaristofm/fastapi-authenticate.git</li>
 <li> cd fastapi-authenticate </li>
 <li> python -m venv .venv </li>
