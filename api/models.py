@@ -1,7 +1,7 @@
 from tortoise.models import Model
 from passlib.hash import bcrypt
-from tortoise import fields
-from tortoise.contrib.pydantic import pydantic_model_creator
+from tortoise import Tortoise, fields 
+
 
 class User(Model):
     id = fields.IntField(pk=True)
@@ -16,5 +16,3 @@ class User(Model):
         return bcrypt.verify(password, self.password_hash)
 
 
-User_Pydantic = pydantic_model_creator(User, name='User')
-UserIn_Pydantic = pydantic_model_creator(User, name='UserIn', exclude_readonly=True)

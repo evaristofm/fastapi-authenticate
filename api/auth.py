@@ -1,8 +1,8 @@
 import jwt
-from passlib.hash import bcrypt
 from fastapi import Depends, HTTPException, status
-from .models import User, User_Pydantic
 from fastapi.security import OAuth2PasswordBearer
+
+from .schemas import User, User_Pydantic
 
 JWT_SECRET = 'myjwtsecret'
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')

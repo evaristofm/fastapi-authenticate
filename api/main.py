@@ -5,10 +5,10 @@ from tortoise.contrib.fastapi import register_tortoise
 from passlib.hash import bcrypt
 
 from .auth import JWT_SECRET, authenticate_user, get_current_user
-from .models import User, User_Pydantic, UserIn_Pydantic
+from .schemas import User_Pydantic, UserIn_Pydantic
+from .models import User
 
 app = FastAPI()
-
 
 
 @app.get('/')
