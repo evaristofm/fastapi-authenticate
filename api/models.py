@@ -17,12 +17,15 @@ class User(Model):
     def verify_password(self, password):
         return bcrypt.verify(password, self.password_hash)
 
+    class PydanticMeta:
+        exclude = []
+
 
 class Item(Model):
     id = fields.IntField(pk=True)
     name = fields.CharField(150)
 
-    user_id: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
+    user: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         "models.User", related_name="items"
     )
 
