@@ -2,6 +2,7 @@ import jwt
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from tortoise.contrib.fastapi import register_tortoise
+from passlib.hash import bcrypt
 
 from .auth import JWT_SECRET, authenticate_user, get_current_user
 from .models import User, User_Pydantic, UserIn_Pydantic
